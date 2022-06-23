@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- 标题 -->
+  <header>
+    <h2>数据可视化-ECharts</h2>
+    <div class="showTime"></div>
+  </header>
+  <!-- 主体 -->
+  <section class="mainbox">
+    <div class="column">
+      <div class="panel left_bar">
+        <h2>柱形图-就业行业</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel left_line">
+        <h2>折线图-人员变化 <a href="javascript: ;">2021</a> <a href="javascript: ;">2022</a></h2>
+
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel left_pic">
+        <h2>柱形图-就业行业</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="numberBox">
+        <div class="box_hd">
+          <div>125811</div>
+          <div>104563</div>
+        </div>
+        <div class="box_bd">
+          <div>前端需求人数</div>
+          <div>市场供应人数</div>
+        </div>
+      </div>
+      <div class="mapBox">
+        <div class="box_bg"></div>
+        <div class="box_rotate1"></div>
+        <div class="box_rotate2"></div>
+        <div class="chart"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="panel right_bar">
+        <h2>柱形图-技能掌握</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel right_line">
+        <h2>折线图-播放量</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel right_pic">
+        <h2>饼形图-地区分布</h2>
+        <div class="chart">图表</div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/flexible.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <!-- 地图数据 -->
+  <script src="js/china.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    window.onload = () => {
+      // setTimeout(showTime, 1000)
+      showTime()
+    }
+
+    // 当前时间
+    function showTime() {
+      const time = new Date()
+      let yy = time.getFullYear()
+      let mm = time.getMonth() + 1
+      let dd = time.getDate()
+      let h = time.getHours()
+      let m = time.getMinutes()
+      let s = time.getSeconds()
+      document.querySelector('.showTime').innerHTML = `当前时间：${yy}年${mm}月${dd}-${h}时${m}分${s}秒`
+      setTimeout(showTime, 1000)
+      // return `${yy}年${mm}月${dd}-${h}时${m}分${s}秒`
+    }
+  </script>
+</body>
+
+</html>
